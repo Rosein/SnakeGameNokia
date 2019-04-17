@@ -15,7 +15,6 @@ enum class Direction : int
 class Snake
 {
 public:
-    Snake(){};
     Snake(int,int);
     const coord & getHead() const;
     std::deque<coord> getBody() const;
