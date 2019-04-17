@@ -16,6 +16,7 @@ link_directories(googletest/googletest/lib)
 include_directories(googletest/googlemock/include)
 link_directories(googletest/googlemock/lib)
 
+
 file(GLOB CLASSES "src/*.cpp")
 file(GLOB TESTG "ut/*.cpp")
 

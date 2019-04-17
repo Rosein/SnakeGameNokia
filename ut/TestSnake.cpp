@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Snake.hpp"
+#include "../include/Snake.hpp"
 
 class SnakeTest : public ::testing::Test
 {
@@ -49,8 +49,6 @@ TEST_F (SnakeTest, checkingHeadPositionAfterMovingBackShouldNoEffect)
     EXPECT_EQ(p, snake.getHead());
 }
 
-
-
 TEST_F (SnakeTest, checkingLastSegmentPositionAfterGrowing)
 {
     coord p {60, 100};
@@ -64,13 +62,11 @@ TEST_F (SnakeTest, checkingLastSegmentPositionAfterReverse)
 {
     coord p {90, 100};
     snake.move(); //110 100
-
     snake.changeDirection(Direction::Up); 
     snake.move(); //110 90
     snake.move(); //110 80
     snake.grow();
     snake.changeDirection(Direction::Left);
     snake.move(); //100 80
-
     EXPECT_EQ(p, snake.getBody().back());
 }

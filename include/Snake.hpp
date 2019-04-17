@@ -17,7 +17,7 @@ class Snake
 public:
     Snake(){};
     Snake(int,int);
-    coord getHead() const;
+    const coord & getHead() const;
     std::deque<coord> getBody() const;
     void move();
     void changeDirection(Direction);

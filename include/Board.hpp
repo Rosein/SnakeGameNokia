@@ -1,8 +1,6 @@
-#include<vector>
+#include <vector>
 #include <map>
 #include "Snake.hpp"
-
-//using Table = std::vector<std::vector<FieldState>>;
 
 enum class FieldState
 {
@@ -12,15 +10,15 @@ enum class FieldState
     Fruit
 };
 
+using Table = std::map<coord, FieldState>;
+
 class Board
 {
 public:
-    Board(int x, int y)
-    {
-
-    }
+    Board(int x, int y);
+    const coord & getSnakeHead() const;
 private:
-    std::map<coord, FieldState> board;
+    Table table;
     coord size;
     Snake snake;
 };

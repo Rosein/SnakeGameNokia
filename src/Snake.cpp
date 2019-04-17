@@ -3,13 +3,11 @@
 
 Snake::Snake(int x, int y): head(std::make_pair(x, y)), direction{Direction::Right}
 {
-    body.push_back(coord(x-stepSize,y));
-    body.push_back(coord(x-2*stepSize,y));
-    body.push_back(coord(x-3*stepSize,y));
-    body.push_back(coord(x-4*stepSize,y));
+    for( int i = 1; i <= 4; ++i)
+        body.push_back(coord(x-i*stepSize,y));
 }
 
-coord Snake::getHead() const 
+const coord & Snake::getHead() const 
 { 
     return head;
 }
@@ -66,6 +64,5 @@ void Snake::changeDirection(Direction dir)
 
 void Snake::grow() 
 {
-    
     body.push_back(body.back());
 }
